@@ -1,5 +1,4 @@
 flask == 0.10.1
-flask-login
-flask-wtf
-peewee
-sqlite3
+flask-login == 0.3.0
+flask-wtf == 0.9.5
+peewee == 2.6.3
