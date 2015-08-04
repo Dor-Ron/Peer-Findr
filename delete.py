@@ -11,7 +11,7 @@ from functools import wraps
 import sqlite3
 import gc
 
-import models
+#import models
 import forms
 from courses import (bio_one_one, bio_one_two, bio_two, chem_one_one, 
                      chem_one_two,chem_one_three, chem_one_four, chem_one_five, 
@@ -27,15 +27,20 @@ from courses import (bio_one_one, bio_one_two, bio_two, chem_one_one,
 #########################################
 
 
-app = Flask(__name__)
-app.secret_key = 'AAAAB3Nzauyyttgrve4r5g4wvyrb6r545rve5bv534w34fve534'
 
+app = Flask(__name__)
+app.secret_key = 'AAAAB3Nzauyyttgrve4r5g4wvyrb6r545rve5bv534w34fve534w3gbf34w34g33f4wfvHT!R@FFT#FFQ@D$!#D#~!@D!@D'
+
+DATABASE = "fuckme.db"
+
+conn = sqlite3.connect(DATABASE, check_same_thread=False)
+c = conn.cursor()
 
 @app.before_request
 def before_request():
     '''Connect to a database before each request.'''
-    g.db = models.DATABASE
-    g.db.connect()
+    g.db = conn
+
 
 @app.after_request
 def after_request(response):
@@ -56,9 +61,30 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
-conn = sqlite3.connect("classmates.db", check_same_thread=False)
+conn = sqlite3.connect(DATABASE, check_same_thread=False)
 c = conn.cursor()
 
+try:
+    c.execute("""CREATE TABLE Fuckme (id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+                                     username VARCHAR(20) UNIQUE,
+                                     password VARCHAR(18),  
+                                     first_name VARCHAR(20),
+                                     last_name VARCHAR(20),
+                                     is_admin BOOLEAN DEFAULT FALSE,
+                                     first VARCHAR(20),
+                                     second VARCHAR(20),
+                                     third VARCHAR(20),
+                                     fourth VARCHAR(20),
+                                     fifth VARCHAR(20),
+                                     sixth VARCHAR(20))""")
+except sqlite3.OperationalError:
+    pass
+
+def create_user(usr, passw, first_name, last_name, first, second, third, fourth, fifth, sixth):
+    c.execute("""INSERT INTO Fuckme VALUES('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')""".format(usr, passw, first_name, last_name, first, second, third, fourth, fifth, sixth))
+
+def get_user(usr):
+    c.execute("""SELECT username FROM Fuckme WHERE username = '{}'""".format(usr))
 
 #########################################
 ############## Routing ##################
@@ -78,21 +104,21 @@ def register():
     form = forms.RegisterForm()
     if form.validate_on_submit():
         flash("Yay, you've registered succesfully!", "success")
-        models.Classmate.create_user(
-                first_name = form.first_name.data,
-                last_name  = form.last_name.data,
-                username   = form.username.data,
-                password   = form.password.data,
-                first      = form.first.data,
-                second     = form.second.data,
-                third      = form.third.data,
-                fourth     = form.fourth.data,
-                fifth      = form.fifth.data,
-                sixth      = form.sixth.data)
+        create_user(form.username.data,
+                    form.password.data,
+                    form.first_name.data,
+                    form.last_name.data,
+                    form.first.data,
+                    form.second.data,
+                    form.third.data,
+                    form.fourth.data,
+                    form.fifth.data,
+                    form.sixth.data)
         session['logged_in'] = True
         session['username'] = form.username.data
         return redirect(url_for('class_check'))
     return render_template('register.html', form=form)
+
 
 
 @app.route('/login/', methods=['GET', 'POST'])
@@ -100,11 +126,11 @@ def login():
     form = forms.LoginForm()
     if form.validate_on_submit():
         try:
-            user = models.Classmate.get(models.Classmate.username == form.username.data)
-        except models.DoesNotExist:
+            user = get_user(form.username.data)
+        except Exception:
             flash('Your username or password do not match!', 'error')
         else:
-            if user.password == md5(form.password.data).hexdigest():
+            if  user.password == md5(form.password.data).hexdigest():
                 session['logged_in'] = True
                 session['username'] = form.username.data
                 flash("You've successfully logged in!")
@@ -393,21 +419,20 @@ def internal_error(e):
 
 
 if __name__ == '__main__':
-    models.initialize()
+    #models.initialize()
     try:
-        models.Classmate.create_user(
-            username = "DorRon",
-            password='zaeed13',
-            admin=True,
-            first_name='Dor',
-            last_name="Rondel",
-            first = "CalculusI82268",
-            second = "BiologyI16447",
-            third = "English59554",
-            fourth = "Speech77662",
-            fifth = "none",
-            sixth = "Psychology69200"
+        create_user(
+            "DorRon",
+            'zaeed13',
+            'Dor',
+            "Rondel",
+            "CalculusI82268",
+            "BiologyI16447",
+            "English59554",
+            "Speech77662",
+            "none",
+            "Psychology69200"
         )
-    except ValueError:
+    except sqlite3.OperationalError:
         pass
     app.run(debug = True)

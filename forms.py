@@ -37,5 +37,3 @@ class LoginForm(Form):
     '''WTForm login form'''
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
-
-
