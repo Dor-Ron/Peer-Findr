@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+
+	404 |
+
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron" style="text-align: center;;">
+	<h2 style="color: #660066"> Oops! 404 error. The page you're looking for doesn't exist. </h1>
+	<img src= {{ url_for('static', filename='img/404.png')}} >  
+</div>
+
+{% endblock %}

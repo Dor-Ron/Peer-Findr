@@ -1,0 +1,165 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+
+	Find Classmates |
+
+{% endblock %}
+
+
+{% block content %}
+<div class="jumbotron" style="color:#660066">
+
+{% if user[0][0][1:] == 'none' %}
+<p></p>
+{% else %}
+<h2> {{ user[0][0][1:-5] }}</h2>
+<p>You have class with these individuals atleast once a week</p>
+<br/>
+<table class="table">
+	<thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+    </thead>
+    <tbody>
+  		{% for idx in one %}
+  		<tr>
+  			<td> {{ idx[0][1:] }}  </td>
+  			<td> {{ idx[1][1:] }}  </td>
+  		</tr>
+  		{% endfor %}
+  	</tbody>
+</table>
+<br/>
+{% endif %}
+
+{% if user[0][1][1:] == 'none' %}
+<p></p>
+{% else %}
+<h2> {{ user[0][1][1:-5] }}</h2>
+<p>You have class with these individuals atleast once a week</p>
+<br/>
+<table class="table">
+	<thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+    </thead>
+    <tbody>
+  		{% for idx in two %}
+  		<tr>
+  			<td> {{ idx[0][1:] }}  </td>
+  			<td> {{ idx[1][1:] }}  </td>
+  		</tr>
+  		{% endfor %}
+  	</tbody>
+</table>
+<br/>
+{% endif %}
+
+{% if user[0][2][1:] == 'none' %}
+<p></p>
+{% else %}
+<h2> {{ user[0][2][1:-5] }}</h2>
+<p>You have class with these individuals atleast once a week</p>
+<br/>
+<table class="table">
+	<thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+    </thead>
+    <tbody>
+  		{% for idx in three %}
+  		<tr>
+  			<td> {{ idx[0][1:] }}  </td>
+  			<td> {{ idx[1][1:] }}  </td>
+  		</tr>
+  		{% endfor %}
+  	</tbody>
+</table>
+<br/>
+{% endif %}
+
+{% if user[0][3][1:] == 'none' %}
+<p></p>
+{% else %}
+<h2> {{ user[0][3][1:-5] }}</h2>
+<p>You have class with these individuals atleast once a week</p>
+<br/>
+<table class="table">
+	<thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+    </thead>
+    <tbody>
+  		{% for idx in four %}
+  		<tr>
+  			<td> {{ idx[0][1:] }}  </td>
+  			<td> {{ idx[1][1:] }}  </td>
+  		</tr>
+  		{% endfor %}
+  	</tbody>
+</table>
+<br/>
+{% endif %}
+
+{% if user[0][4][1:] == 'none' %}
+<p></p>
+{% else %}
+<h2> {{ user[0][4][1:-5] }}</h2>
+<p>You have class with these individuals atleast once a week</p>
+<br/>
+<table class="table">
+	<thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+    </thead>
+    <tbody>
+  		{% for idx in five %}
+  		<tr>
+  			<td> {{ idx[0][1:] }}  </td>
+  			<td> {{ idx[1][1:] }}  </td>
+  		</tr>
+  		{% endfor %}
+  	</tbody>
+</table>	    
+<br/>
+{% endif%}
+
+{% if user[0][5][1:] == 'none' %}
+<p></p>
+{% else %}
+<h2> {{ user[0][5][1:-5] }}</h2>
+<p>You have class with these individuals atleast once a week</p>
+<br/>
+<table class="table">
+	<thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+    </thead>
+    <tbody>
+  		{% for idx in six %}
+  		<tr>
+  			<td> {{ idx[0][1:] }}  </td>
+  			<td> {{ idx[1][1:] }}  </td>
+  		</tr>
+  		{% endfor %}
+  	</tbody>
+</table>
+{% endif %}
+
+<br/><br/>
+</div>
+
+{% endblock %}

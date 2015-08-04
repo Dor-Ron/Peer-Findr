@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+
+	About |
+
+{% endblock %}
+ 
+{% block stylesheet %}
+<style>
+.jumbotron{ 
+	text-align: center;
+	color: #660066;
+}
+
+hr {
+	height: 1px;
+	color: #123455;
+	background-color: #FCFCFC;
+	border: none;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1>About</h1>
+  <hr/>
+  <p>I created Peer Findr after making a few friends at the freshman orientation. Some of us were taking the same types of courses, but we didn't know if we were in the exact same class. Since I did a similar thing for high school, I figured why not do the same thing again. The goal of Peer Findr is to make finding new friends more efficient and adjusting to college way easier. If you already made friends it will let you know if you have class with them, and if you didn't yet or new ones, this is the perfect chance to get to know them better before school begins. If someone has class with you hit them up on &copy Facebook!!!</p>
+</div>
+{% endblock %}

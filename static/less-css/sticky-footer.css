@@ -1,0 +1,58 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  color: white;
+  background-color: #660066;
+  text-align: center;
+  font-size: 17px;
+  padding-top: 0.8em;
+}
+
+.header {
+  color: white;
+}
+
+/* Change navbar color */
+.navbar-custom {
+    background-color: #660066;
+    color: #ffffff;
+    border-radius: 0;
+}
+  
+.navbar-custom .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: transparent;
+}
+      
+.navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #FFFFFF;
+}
+      
+.navbar-custom .navbar-brand {
+    color: #FFFFFF;
+}
+
+.navbar-custom .icon-bar {
+    background-color: #FFFFFF;
+}

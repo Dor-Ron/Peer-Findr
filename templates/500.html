@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+
+	500 |
+
+{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron" style="text-align:center;">
+	<h2 style="color:#660066"> Sorry, something went wrong. The error has been logged and I'll look into it. Please try again soon... </h2>
+	<img src = {{ url_for('static', filename='img/500.jpg') }} style="margin-top:2em;">
+</div>
+
+{% endblock %}

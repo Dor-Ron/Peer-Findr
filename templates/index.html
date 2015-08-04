@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block stylesheet %}
+<link rel='stylesheet' href='{{ url_for('static', filename='less-css/index.css')}}'
+{% endblock %}
+
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1 style='font-size: 4.5em;'>Want to know who will be in your classes?</h1>
+  <hr/>
+  <p>Peer Findr is a web application that enables incoming CCNY Grove School of Engineering students to be matched with their classmates for the the upcoming semester. Simply sign up, answer a few questions, and see if other members are taking the same courses as you!</p>
+  <p><a class="btn btn-primary btn-lg" href="/register/" role="button" style="margin-bottom: -3em; ">Sign up!</a></p>
+</div>
+
+{% endblock %}
