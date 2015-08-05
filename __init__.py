@@ -396,17 +396,17 @@ if __name__ == '__main__':
     models.initialize()
     try:
         models.Classmate.create_user(
-            username = "DorRon",
-            password='zaeed13',
-            admin=True,
-            first_name='Dor',
-            last_name="Rondel",
-            first = "CalculusI82268",
-            second = "BiologyI16447",
-            third = "English59554",
-            fourth = "Speech77662",
-            fifth = "none",
-            sixth = "Psychology69200"
+            username = "Test",
+            password='Testing3',
+            admin=False,
+            first_name='test',
+            last_name="test",
+            first = "nononecanchoosethisvaluesoitwontpair",
+            second = "nononecanchoosethisvaluesoitwontpair",
+            third = "nononecanchoosethisvaluesoitwontpair",
+            fourth = "nononecanchoosethisvaluesoitwontpair",
+            fifth = "nononecanchoosethisvaluesoitwontpair",
+            sixth = "nononecanchoosethisvaluesoitwontpair"
         )
     except ValueError:
         pass
