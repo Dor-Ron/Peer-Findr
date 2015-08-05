@@ -6,10 +6,10 @@ find their future classmates prior to the comencement of classes.
 
 Built with:  
 
-  * Python, Flask, Peewee, and SQL for the backend. 
+  * Python, Flask, Peewee, and SQLite for the backend. 
   
   * HTML, CSS, LESS, Javascript and Bootstrap for the frontend.
   
   * Utilized Jinja2 templating as well.
 
-Built within the course of one day, so excuse any mistakes...
+Built within the course of a day and a half, so excuse any mistakes...
