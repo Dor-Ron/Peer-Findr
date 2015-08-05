@@ -10,6 +10,6 @@ Built with:
   
   * HTML, CSS, LESS, Javascript and Bootstrap for the frontend.
   
-  * Utilized Jinja2 templating as well.
+  * Utilized Jinja2 templating to connect the two.
 
 Built within the course of a day and a half, so excuse any mistakes...
