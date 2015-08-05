@@ -28,18 +28,19 @@ class Classmate(UserMixin, BaseModel):
 	sixth = CharField(max_length = 20)
 
 	'''
-	Basically in SQL:    CREATE TABLE Classmate (id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-												 username VARCHAR(20) UNIQUE,
-												 password VARCHAR(18),  
-												 first_name VARCHAR(20),
-												 last_name VARCHAR(20),
-												 is_admin BOOLEAN DEFAULT FALSE,
-												 first VARCHAR(20),
-												 second VARCHAR(20),
-												 third VARCHAR(20),
-												 fourth VARCHAR(20),
-												 fifth VARCHAR(20),
-												 sixth VARCHAR(20))
+	Basically in SQL:    CREATE TABLE Classmate (	id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+							 username VARCHAR(20) UNIQUE,
+							 password VARCHAR(18),  
+							 first_name VARCHAR(20),
+							 last_name VARCHAR(20),
+							 is_admin BOOLEAN DEFAULT FALSE,
+							 first VARCHAR(20),
+							 second VARCHAR(20),
+							 third VARCHAR(20),
+							 fourth VARCHAR(20),
+							 fifth VARCHAR(20),
+							 sixth VARCHAR(20)
+						     );
 	'''  
 	# Note that peewee automatically creates an id row, so there's no need to actually declare it.
 
