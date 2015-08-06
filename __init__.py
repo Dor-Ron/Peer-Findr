@@ -4,8 +4,9 @@
 ################ Imports ################
 #########################################
 
+
 from flask import (Flask, render_template, url_for, redirect, 
-				   flash, g, request, session)
+		   flash, g, request, session)
 from hashlib import md5
 from functools import wraps
 import sqlite3
@@ -67,7 +68,7 @@ c = conn.cursor()
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+    return render_template('index.html')
 
 @app.route('/about/')
 def about_page():
