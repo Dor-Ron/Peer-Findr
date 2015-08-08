@@ -253,7 +253,7 @@ def class_check():
 
         return query
 
-    #----------------- End query design -----------------
+    #----------------- End query design ------------------
 
     SCIENCE_LIST = [bio_one_one, bio_one_two, bio_two, chem_one_one, 
                     chem_one_two,chem_one_three, chem_one_four, chem_one_five, 
