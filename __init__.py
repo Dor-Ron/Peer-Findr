@@ -329,7 +329,7 @@ def class_check():
 
     student_science_list = []
     for lst in SCIENCE_LIST:
-        if second_class in lst or student[3][1:] == second_class:
+        if second_class in lst:
             student_science_list = lst
             break
 
