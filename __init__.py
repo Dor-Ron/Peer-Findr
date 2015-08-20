@@ -29,7 +29,7 @@ from courses import (bio_one_one, bio_one_two, bio_two, chem_one_one,
 
 
 app = Flask(__name__)
-app.secret_key = 'AAAAB3Nzauyyttgrve4r5g4wvyrb6r545rve5bv534w34fve534'
+app.secret_key = 'REDACTED'
 
 
 @app.before_request
@@ -398,7 +398,7 @@ if __name__ == '__main__':
     try:
         models.Classmate.create_user(
             username = "Test",
-            password='Testing3',
+            password='REDACTED',
             admin=False,
             first_name='test',
             last_name="test",
